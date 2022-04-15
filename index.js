@@ -1,14 +1,20 @@
 let canvas = document.getElementById("canvas");
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let ctx = canvas.getContext("2d")
 let arr = []
 
+const count = 1600;
+const maxValue = 800;
+const delay = 1000;
+
 function shuffle() {
-    for(let i = 0; i < 1600; i++) {
-        arr.push(Math.random() * 800)
+    for(let i = 0; i < count; i++) {
+        arr.push(Math.random() * maxValue)
     }
 }
+
 shuffle()
 
 function paintArray() {
@@ -34,7 +40,7 @@ function sort() {
                 }
             }
             paintArray()
-        }, 1000)
+        }, delay)
     }
 }
 
